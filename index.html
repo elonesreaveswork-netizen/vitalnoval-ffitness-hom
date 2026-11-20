@@ -46,6 +46,12 @@ section{padding:88px 0}.section-head{max-width:650px;margin-bottom:36px}.kicker{
 footer{background:#0b2b22;color:#fff;padding:45px 0 24px}.footer-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:35px}.footer-brand{font:800 22px Manrope}.footer-grid p{color:#bdd0c5;max-width:500px;font-size:14px}.footer-links{display:flex;gap:18px;flex-wrap:wrap;justify-content:flex-end;align-content:flex-start}.footer-links a{color:#e2eee6;text-decoration:none;font-size:14px}.copyright{border-top:1px solid rgba(255,255,255,.16);margin-top:30px;padding-top:18px;color:#a9c0b2;font-size:12px}
 @media(max-width:800px){.hero-grid,.feature-grid{grid-template-columns:1fr}.hero-grid{gap:35px;min-height:auto}.hero-visual{min-height:310px}.cards,.plans{grid-template-columns:1fr 1fr}.habit-grid{grid-template-columns:1fr 1fr}.plan.featured{transform:none}.trust-grid{grid-template-columns:1fr;gap:12px}.trust-item{justify-content:flex-start}.footer-grid{grid-template-columns:1fr}.footer-links{justify-content:flex-start}}
 @media(max-width:620px){.wrap{width:min(100% - 30px,1120px)}.nav{min-height:68px}.menu{display:block}.links{display:none;position:absolute;top:68px;left:0;right:0;padding:18px 22px 22px;background:#f5f5ef;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:14px}.links.open{display:flex}.links a{padding:7px 0}.nav-cta{display:none}.hero-grid{padding-top:55px;padding-bottom:45px}h1{font-size:46px}.hero-copy{font-size:16px}.hero-visual{min-height:280px}section{padding:65px 0}.cards,.plans,.habit-grid{grid-template-columns:1fr}.section-head{margin-bottom:25px}.feature-grid{gap:28px}.feature-panel{min-height:280px;padding:26px}.actions .button{width:100%}}
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:9px 13px;border:1px solid var(--line);border-radius:999px;background:var(--white);color:var(--ink);font:700 13px "DM Sans",Arial,sans-serif;cursor:pointer;white-space:nowrap}.theme-toggle:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+html[data-theme="dark"]{color-scheme:dark;--green:#102b24;--green2:#8fc8a8;--lime:#c5f36a;--cream:#111a17;--white:#1b2822;--ink:#edf5ef;--muted:#b0c0b6;--line:#34463d}
+html[data-theme="dark"] header{background:rgba(17,26,23,.94)}html[data-theme="dark"] .links a{color:#d8e6dc}html[data-theme="dark"] .menu{background:#1b2822;color:#edf5ef}html[data-theme="dark"] .trust{background:#1b2822}html[data-theme="dark"] .trust-item{color:#d8e6dc}
+html[data-theme="dark"] .card,html[data-theme="dark"] .plan{background:#1b2822;border-color:#34463d}html[data-theme="dark"] .feature,html[data-theme="dark"] .habits{background:#15221c}html[data-theme="dark"] .habit{background:#202f27}html[data-theme="dark"] .disclaimer{background:#332d1b;border-color:#66552b;color:#f1dfad}
+html[data-theme="dark"] .section-head p,html[data-theme="dark"] .card p,html[data-theme="dark"] .plan p,html[data-theme="dark"] .plan ul,html[data-theme="dark"] .habit p,html[data-theme="dark"] .feature-copy>p{color:#b8c9be}html[data-theme="dark"] .level{color:#a7d9b8}html[data-theme="dark"] .plan.featured{background:#102b24;border-color:#315c48}html[data-theme="dark"] .plan.featured p,html[data-theme="dark"] .plan.featured ul{color:#d1e0d8}html[data-theme="dark"] .theme-toggle{background:#26372e;color:#f1f7f2;border-color:#52665a}
+@media(max-width:620px){.theme-toggle{margin-left:auto;margin-right:8px;padding:8px 10px}.theme-toggle .theme-label{display:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -56,7 +62,7 @@ footer{background:#0b2b22;color:#fff;padding:45px 0 24px}.footer-grid{display:gr
 <button class="menu" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
 <nav class="links" id="navLinks" aria-label="Main navigation">
 <a href="#about">About</a><a href="#focus">Our focus</a><a href="#programs">Programs</a><a href="#sports">Sports & games</a><a href="#home-care">Home care</a><a href="#habits">Healthy habits</a>
-</nav><a class="nav-cta" href="#programs">Explore programs ↗</a>
+</nav><button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false"><span aria-hidden="true">☾</span><span class="theme-label">Dark mode</span></button><a class="nav-cta" href="#programs">Explore programs ↗</a>
 </div></header>
 <main id="main">
 <section class="hero" id="home" style="padding:0;border:0">
@@ -111,6 +117,10 @@ footer{background:#0b2b22;color:#fff;padding:45px 0 24px}.footer-grid{display:gr
 const menuBtn=document.getElementById('menuBtn');const navLinks=document.getElementById('navLinks');
 menuBtn.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));menuBtn.setAttribute('aria-label',open?'Close navigation':'Open navigation');menuBtn.textContent=open?'✕':'☰'});
 navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.setAttribute('aria-label','Open navigation');menuBtn.textContent='☰'}));
+const themeToggle=document.getElementById('themeToggle');const themeLabel=themeToggle.querySelector('.theme-label');const themeIcon=themeToggle.querySelector('[aria-hidden="true"]');
+function applyTheme(theme){document.documentElement.dataset.theme=theme;const dark=theme==='dark';themeToggle.setAttribute('aria-pressed',String(dark));themeToggle.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');themeLabel.textContent=dark?'Light mode':'Dark mode';themeIcon.textContent=dark?'☀':'☾';}
+const savedTheme=localStorage.getItem('vitalnoval-theme');applyTheme(savedTheme==='dark'?'dark':'light');
+themeToggle.addEventListener('click',()=>{const next=document.documentElement.dataset.theme==='dark'?'light':'dark';localStorage.setItem('vitalnoval-theme',next);applyTheme(next);});
 document.getElementById('year').textContent=new Date().getFullYear();
 </script>
 </body>
