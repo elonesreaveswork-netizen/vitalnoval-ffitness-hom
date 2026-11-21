@@ -82,6 +82,42 @@ html[data-theme="dark"] .founder-caption{color:#d7e9dc}
 html[data-theme="dark"] .credential-status{background:#344a38;color:#d9f0df}
 @media(max-width:800px){.founder-grid{grid-template-columns:1fr}.founder-visual{min-height:330px}.founder-photo-slot{min-height:220px}}
 
+
+/* Dark-theme navigation readability fix */
+html[data-theme="dark"] .links{
+  background:#17251f;
+  border-bottom:1px solid #40574a;
+  box-shadow:0 14px 28px rgba(0,0,0,.38);
+}
+html[data-theme="dark"] .links a{
+  color:#f3f8f4;
+  opacity:1;
+  text-shadow:none;
+}
+html[data-theme="dark"] .links a:hover,
+html[data-theme="dark"] .links a:focus-visible{
+  color:#d7f99a;
+  background:#263a2e;
+  border-radius:8px;
+  outline-offset:3px;
+}
+html[data-theme="dark"] .menu{
+  background:#26372e;
+  color:#f3f8f4;
+  border-color:#526b5b;
+}
+html[data-theme="dark"] .menu:hover,
+html[data-theme="dark"] .theme-toggle:hover{
+  background:#344b3c;
+  color:#fff;
+}
+html[data-theme="dark"] .links.open{
+  visibility:visible;
+  opacity:1;
+  filter:none;
+  backdrop-filter:none;
+}
+
 </style>
 </head>
 <body>
