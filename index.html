@@ -52,6 +52,11 @@ html[data-theme="dark"] header{background:rgba(17,26,23,.94)}html[data-theme="da
 html[data-theme="dark"] .card,html[data-theme="dark"] .plan{background:#1b2822;border-color:#34463d}html[data-theme="dark"] .feature,html[data-theme="dark"] .habits{background:#15221c}html[data-theme="dark"] .habit{background:#202f27}html[data-theme="dark"] .disclaimer{background:#332d1b;border-color:#66552b;color:#f1dfad}
 html[data-theme="dark"] .section-head p,html[data-theme="dark"] .card p,html[data-theme="dark"] .plan p,html[data-theme="dark"] .plan ul,html[data-theme="dark"] .habit p,html[data-theme="dark"] .feature-copy>p{color:#b8c9be}html[data-theme="dark"] .level{color:#a7d9b8}html[data-theme="dark"] .plan.featured{background:#102b24;border-color:#315c48}html[data-theme="dark"] .plan.featured p,html[data-theme="dark"] .plan.featured ul{color:#d1e0d8}html[data-theme="dark"] .theme-toggle{background:#26372e;color:#f1f7f2;border-color:#52665a}
 @media(max-width:620px){.theme-toggle{margin-left:auto;margin-right:8px;padding:8px 10px}.theme-toggle .theme-label{display:none}}
+
+#institutions .card,#first-aid .card{height:100%}
+#first-aid .disclaimer{background:#fff2ed;border-color:#efc7b8;color:#713b2c}
+html[data-theme="dark"] #first-aid .disclaimer{background:#38251f;border-color:#704638;color:#f3c9b9}
+@media(max-width:620px){#institutions .cards,#first-aid .cards{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -61,7 +66,7 @@ html[data-theme="dark"] .section-head p,html[data-theme="dark"] .card p,html[dat
 <a class="brand" href="#home"><span class="brandmark">✳</span><span>VITAL NOVAL<small>FITNESS & WELLNESS</small></span></a>
 <button class="menu" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
 <nav class="links" id="navLinks" aria-label="Main navigation">
-<a href="#about">About</a><a href="#focus">Our focus</a><a href="#programs">Programs</a><a href="#sports">Sports & games</a><a href="#home-care">Home care</a><a href="#habits">Healthy habits</a>
+<a href="#about">About</a><a href="#focus">Our focus</a><a href="#programs">Programs</a><a href="#sports">Sports & games</a><a href="#home-care">Home care</a><a href="#first-aid">First aid</a><a href="#institutions">Institutions</a><a href="#habits">Healthy habits</a>
 </nav><button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false"><span aria-hidden="true">☾</span><span class="theme-label">Dark mode</span></button><a class="nav-cta" href="#programs">Explore programs ↗</a>
 </div></header>
 <main id="main">
@@ -69,7 +74,7 @@ html[data-theme="dark"] .section-head p,html[data-theme="dark"] .card p,html[dat
 <div class="wrap hero-grid">
 <div><div class="eyebrow">Your journey. Your strength.</div>
 <h1>Move better.<br><span>Live stronger.</span></h1>
-<p class="hero-copy">Build a healthier, more active life—one practical step at a time. Discover approachable workouts, everyday wellness guidance and motivation that meets you where you are.</p>
+<p class="hero-copy">A learning destination for healthier living. Explore practical health education, fitness, nutrition, sports, everyday wellbeing and life-saving awareness for individuals and institutions.</p>
 <div class="actions"><a class="button" href="#programs">Find your starting point ↗</a><a class="button outline" href="#about">Discover Vital Noval</a></div>
 <div class="hero-note">No perfection required. Just progress, consistency and care.</div></div>
 <div class="hero-visual" role="img" aria-label="Abstract green wellness-inspired visual"><div class="visual-content"><strong>Small steps.<br>Stronger tomorrow.</strong><p>A balanced approach to movement, wellbeing and everyday energy.</p><div class="visual-stat"><span><b>MOVE</b><br>with purpose</span><span><b>GROW</b><br>at your pace</span><span><b>THRIVE</b><br>every day</span></div></div></div>
@@ -110,9 +115,29 @@ html[data-theme="dark"] .section-head p,html[data-theme="dark"] .card p,html[dat
 </div>
 <div class="disclaimer"><strong>Health safety:</strong> Vital Noval shares general education, not diagnosis or treatment instructions. Do not use home remedies to delay care, stop prescribed medication or treat serious symptoms. Seek urgent medical help for emergencies, severe or worsening symptoms, breathing difficulty, chest pain, confusion or signs of dehydration. Consult a qualified healthcare professional for persistent symptoms, children, pregnancy or existing health conditions.</div>
 </div></section>
+
+<section id="institutions"><div class="wrap"><div class="section-head"><div class="kicker">For schools, organisations & communities</div><h2>An educational resource for groups that care about healthy living.</h2><p>VitalNoval supports individuals and institutions with accessible health, fitness and wellness learning themes. These pathways are a starting point for planning educational activities—not accredited training or a substitute for local professional standards.</p></div>
+<div class="cards">
+<article class="card"><div class="icon">🏫</div><h3>Schools & learning centres</h3><p>Explore age-appropriate topics such as movement, nutrition, personal hygiene, sportsmanship and basic emergency awareness.</p><a class="text-link" href="#sports">Explore learning topics →</a></article>
+<article class="card"><div class="icon">🏢</div><h3>Workplaces & organisations</h3><p>Build wellness awareness through practical themes covering active routines, healthy habits, safe participation and emergency preparedness.</p><a class="text-link" href="#focus">Explore wellness foundations →</a></article>
+<article class="card"><div class="icon">🤝</div><h3>Community programmes</h3><p>Use inclusive health education themes to encourage participation, recreation, prevention and healthier everyday choices across communities.</p><a class="text-link" href="#habits">Explore healthy habits →</a></article>
+</div>
+<div class="disclaimer"><strong>Institutional use:</strong> Before using materials in a school, workplace or community programme, review them against local policies, age needs and relevant public-health guidance. Practical first-aid instruction should be delivered by appropriately qualified trainers.</div>
+</div></section>
+<section id="first-aid" class="feature"><div class="wrap"><div class="section-head"><div class="kicker">First aid & emergency readiness</div><h2>Know what to do while help is on the way.</h2><p>First-aid awareness can help people recognise an emergency, act within their training and seek professional help quickly. These topic summaries are educational signposts, not a replacement for hands-on, certified training.</p></div>
+<div class="cards">
+<article class="card"><div class="icon">🩹</div><h3>Severe bleeding</h3><p>Recognise life-threatening bleeding, call local emergency services and apply firm, continuous direct pressure with a clean dressing or cloth. For life-threatening limb bleeding, a commercial tourniquet may be appropriate when available and the responder knows how to use it.</p></article>
+<article class="card"><div class="icon">🔥</div><h3>Burns & scalds</h3><p>Learn immediate first-aid priorities, including cooling a burn with cool running water, protecting the area and recognising burns that need urgent medical assessment. Avoid applying butter, oils or home remedies.</p></article>
+<article class="card"><div class="icon">🫁</div><h3>Choking response</h3><p>Understand how to recognise severe choking and why the response differs by age and circumstance. Learn the correct techniques through an accredited, hands-on first-aid course.</p></article>
+<article class="card"><div class="icon">❤️</div><h3>CPR & AED awareness</h3><p>Learn to recognise possible cardiac arrest, activate emergency services, locate an AED and follow its voice prompts. Practical CPR skills should be learned and refreshed through recognised training.</p></article>
+<article class="card"><div class="icon">🦴</div><h3>Injuries & fractures</h3><p>Explore how to protect an injured person, avoid unnecessary movement, recognise serious injury and arrange appropriate emergency care.</p></article>
+<article class="card"><div class="icon">📞</div><h3>Emergency action plan</h3><p>Know your local emergency number, share the exact location, describe what happened, follow the call handler's instructions and make the scene as safe as possible.</p></article>
+</div>
+<div class="disclaimer"><strong>Emergency reminder:</strong> If someone has life-threatening bleeding, trouble breathing, is unresponsive or appears seriously injured, contact local emergency services immediately. Do not delay emergency care to read website material. For bleeding, maintain firm direct pressure while help is coming; use a tourniquet only when indicated and you are trained or can follow reliable device instructions.</div>
+</div></section>
 <section class="cta"><div class="wrap"><div class="eyebrow" style="justify-content:center">Your next chapter starts today</div><h2>One positive choice can become a powerful routine.</h2><p>Take the first step at your own pace. Explore the guidance, choose a simple goal and keep showing up for your wellbeing.</p><a class="button" href="#programs">Start your fitness journey ↗</a></div></section>
 </main>
-<footer><div class="wrap"><div class="footer-grid"><div><div class="footer-brand">VITAL NOVAL FITNESS</div><p>Practical fitness inspiration and everyday wellness education to help you move with confidence and build healthier habits for the long term.</p></div><nav class="footer-links" aria-label="Footer navigation"><a href="#home">Home</a><a href="#about">About</a><a href="#focus">Our focus</a><a href="#programs">Programs</a><a href="#habits">Healthy habits</a></nav></div><div class="copyright">© <span id="year"></span> Vital Noval Fitness. All rights reserved. · General wellness information only; not a substitute for professional medical advice.</div></div></footer>
+<footer><div class="wrap"><div class="footer-grid"><div><div class="footer-brand">VITAL NOVAL FITNESS</div><p>Health, fitness, wellness and first-aid awareness resources for individuals, schools, organisations and communities.</p></div><nav class="footer-links" aria-label="Footer navigation"><a href="#home">Home</a><a href="#about">About</a><a href="#focus">Our focus</a><a href="#programs">Programs</a><a href="#habits">Healthy habits</a><a href="#first-aid">First aid</a><a href="#institutions">Institutions</a></nav></div><div class="copyright">© <span id="year"></span> Vital Noval Fitness. All rights reserved. · General wellness information only; not a substitute for professional medical advice.</div></div></footer>
 <script>
 const menuBtn=document.getElementById('menuBtn');const navLinks=document.getElementById('navLinks');
 menuBtn.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));menuBtn.setAttribute('aria-label',open?'Close navigation':'Open navigation');menuBtn.textContent=open?'✕':'☰'});
