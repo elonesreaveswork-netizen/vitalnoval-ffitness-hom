@@ -15,6 +15,17 @@ html[data-theme="dark"]{color-scheme:dark;--green:#102b24;--green2:#8fc8a8;--lim
 html[data-theme="dark"] .hero h1,html[data-theme="dark"] .guide h2{color:#d9f0df}html[data-theme="dark"] .guide{background:#1b2822;border-color:var(--line)}html[data-theme="dark"] .tools input,html[data-theme="dark"] .tools select{background:#1b2822;color:var(--ink);border-color:var(--line)}html[data-theme="dark"] .tag{background:#263b2d;color:#c5f36a}html[data-theme="dark"] .note{background:#332d1b;border-color:#66552b;color:#f1dfad}html[data-theme="dark"] .btn.secondary{background:#26372e;color:#edf5ef}
 @media(max-width:680px){.grid{grid-template-columns:1fr}.hero{padding-top:40px}.top{align-items:flex-start;flex-direction:column}}
 @media print{header,.tools,.guide-actions,.footer,.hero .kicker{display:none!important}body{background:#fff;color:#111}.wrap{width:100%}.hero{padding:10px 0}.grid{display:block;padding:0}.guide{box-shadow:none;break-inside:avoid;border:0;border-bottom:1px solid #ccc;margin-bottom:18px;padding:12px 0}.guide details>*{display:block}.guide details summary{display:none}.guide details{border:0}.note{background:#fff}}
+
+/* Shared accessible theme controls and small-screen refinements */
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:42px;padding:9px 13px;border:1px solid rgba(255,255,255,.35);border-radius:999px;background:rgba(255,255,255,.12);color:#fff;font:700 13px Arial,sans-serif;cursor:pointer;white-space:nowrap}
+.theme-toggle:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #c5f36a;outline-offset:3px}
+html[data-theme="dark"] header{background:#102b24}
+html[data-theme="dark"] .hero{background:linear-gradient(140deg,#1a3025,#111a17)}
+html[data-theme="dark"] .hero h1,html[data-theme="dark"] .kicker{color:#d9f0df}
+html[data-theme="dark"] .hero p{color:#b8c9be}
+html[data-theme="dark"] .top a.back{color:#f3f8f4}
+@media(max-width:560px){.top{align-items:flex-start;flex-wrap:wrap}.top .back{margin-left:auto}.theme-toggle{margin-left:auto}.hero{padding-top:38px}.tools input{min-width:100%}.tools select{width:100%}.guide{padding:19px}.guide-actions .btn{flex:1}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -62,5 +73,10 @@ search.addEventListener('input',filter);category.addEventListener('change',filte
 document.querySelectorAll('.print').forEach(btn=>btn.addEventListener('click',()=>{const details=btn.closest('.guide').querySelector('details');const was=details.open;details.open=true;window.print();details.open=was}));
 document.getElementById('year').textContent=new Date().getFullYear();
 const saved=localStorage.getItem('vitalnoval-theme');if(saved==='dark')document.documentElement.dataset.theme='dark';
+
+const themeToggle=document.getElementById('themeToggle');
+function applyTheme(mode){document.documentElement.dataset.theme=mode;localStorage.setItem('vitalnoval-theme',mode);const dark=mode==='dark';themeToggle.setAttribute('aria-pressed',String(dark));themeToggle.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');document.getElementById('themeIcon').textContent=dark?'☀':'☾';document.getElementById('themeLabel').textContent=dark?'Light mode':'Dark mode';}
+applyTheme(localStorage.getItem('vitalnoval-theme')==='dark'?'dark':'light');
+themeToggle.addEventListener('click',()=>applyTheme(document.documentElement.dataset.theme==='dark'?'light':'dark'));
 </script>
 </body></html>
