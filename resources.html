@@ -32,7 +32,7 @@ html[data-theme="dark"] .top a.back{color:#f3f8f4}
 <header><div class="wrap top"><a class="brand" href="index.html">VITALNOVAL<small>HEALTHY LIVING FOR EVERYONE</small></a><a class="back" href="index.html">← Back to main website</a><button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false"><span id="themeIcon" aria-hidden="true">☾</span><span id="themeLabel">Dark mode</span></button></div></header>
 <main class="wrap">
 <section class="hero"><div class="kicker">Learn · Practise · Grow</div><h1>The VitalNoval<br>Educational Resource Library</h1><p>Practical starting points for healthier everyday choices. Explore short learning guides for individuals, families, schools, workplaces and community groups. Choose a topic, open its guide, download a portable copy or print it. Printable HTML files can also be saved as PDFs from your browser.</p>
-<div class="tools"><input id="search" type="search" placeholder="Search guides or topics…" aria-label="Search learning guides"><select id="category" aria-label="Filter by category"><option value="all">All categories</option><option value="wellness">Everyday wellness</option><option value="fitness">Movement & fitness</option><option value="nutrition">Nutrition</option><option value="sports">Sports & recreation</option><option value="safety">Safety & first aid</option><option value="institutions">Group learning</option></select><button class="btn" id="downloadAll" type="button">Download all 6 guides ↓</button></div><div class="count" id="count" aria-live="polite">Showing 6 learning guides</div></section>
+<div class="tools"><input id="search" type="search" placeholder="Search guides or topics…" aria-label="Search learning guides"><select id="category" aria-label="Filter by category"><option value="all">All categories</option><option value="wellness">Everyday wellness</option><option value="fitness">Movement & fitness</option><option value="nutrition">Nutrition</option><option value="sports">Sports & recreation</option><option value="safety">Safety & first aid</option><option value="institutions">Group learning</option><option value="health">Personal & environmental health</option></select><button class="btn" id="downloadAll" type="button">Download all 7 guides ↓</button></div><div class="count" id="count" aria-live="polite">Showing 7 learning guides</div></section>
 <section class="grid" id="guides" aria-label="Learning guides">
 <article class="guide" data-category="wellness" data-search="everyday wellness healthy habits sleep hydration routine wellbeing">
 <span class="tag">Everyday wellness</span><h2>1. A practical healthy-living starter</h2><p>Build a realistic foundation with small habits that can fit into ordinary days.</p>
@@ -57,6 +57,32 @@ html[data-theme="dark"] .top a.back{color:#f3f8f4}
 <article class="guide" data-category="institutions" data-search="schools workplaces community institutions group learning lesson planning wellness">
 <span class="tag">Group learning</span><h2>6. Planning a healthy-living session</h2><p>A simple framework for educators, workplaces and community organisers.</p>
 <details><summary>Open learning guide</summary><ul><li><b>Set one learning goal:</b> decide what participants should understand or practise by the end.</li><li><b>Know your audience:</b> adapt language, activities and accessibility for age, culture, ability and local context.</li><li><b>Keep it practical:</b> use a short discussion, a safe activity and time for questions.</li><li><b>Use trustworthy information:</b> check health content against current public-health guidance and local policies.</li><li><b>Evaluate and improve:</b> ask what participants learned and what they would like to explore next.</li></ul><div class="note"><b>Institutional note:</b> These resources are general educational starting points, not accredited curricula, clinical advice or certified first-aid training. Have relevant professionals review materials before formal use.</div></details>
+<div class="guide-actions"><button class="btn download">Download guide ↓</button><button class="btn secondary print">Print guide</button></div></article>
+<article class="guide" data-category="health" data-search="personal health environmental health hygiene mental emotional wellbeing disease prevention water sanitation waste management air quality pollution healthy housing climate health">
+<span class="tag">Personal & environmental health</span><h2>7. Personal and environmental health essentials</h2><p>Understand how everyday personal choices and shared surroundings work together to protect health.</p>
+<details><summary>Open learning guide</summary>
+<h3>Personal health</h3><ul>
+<li><b>Hygiene:</b> practise regular handwashing with soap and safe water, oral care and appropriate personal hygiene.</li>
+<li><b>Nutrition and hydration:</b> aim for varied, nourishing foods and safe drinking water; needs differ by age, activity, climate and health circumstances.</li>
+<li><b>Rest and wellbeing:</b> make room for sleep, movement, supportive relationships and healthy ways to manage everyday stress.</li>
+<li><b>Prevention:</b> follow reliable local public-health guidance, recommended vaccinations and appropriate screening advice.</li>
+<li><b>Get support:</b> seek qualified healthcare advice for persistent symptoms, health concerns or individual medical decisions.</li>
+</ul>
+<h3>Environmental health</h3><ul>
+<li><b>Water and sanitation:</b> protect drinking-water sources, store water safely and use appropriate sanitation and handwashing facilities.</li>
+<li><b>Waste management:</b> reduce waste where possible, separate materials appropriately and follow local rules for hazardous or medical waste.</li>
+<li><b>Air quality:</b> reduce exposure to smoke and pollutants where possible, ventilate indoor spaces safely and follow local air-quality alerts.</li>
+<li><b>Healthy homes:</b> address dampness, improve safe ventilation, store food securely and reduce standing water that may attract mosquitoes.</li>
+<li><b>Community resilience:</b> prepare for heat, flooding and severe weather using advice from local public-health and emergency authorities.</li>
+</ul>
+<h3>Put learning into practice</h3><ul>
+<li>Choose one personal-health habit to strengthen this week.</li>
+<li>Observe one safe improvement that could make your home environment healthier.</li>
+<li>Identify a reliable local source for drinking-water, sanitation, air-quality and emergency updates.</li>
+<li>Share one practical lesson with a family member, classmate or community group.</li>
+</ul>
+<div class="note"><b>Safety note:</b> This is general educational information, not diagnosis, treatment or environmental testing. Do not handle unknown chemicals, contaminated waste or unsafe water. Follow local public-health instructions and consult qualified professionals when needed.</div>
+</details>
 <div class="guide-actions"><button class="btn download">Download guide ↓</button><button class="btn secondary print">Print guide</button></div></article>
 <div class="empty" id="empty">No guides match that search. Try another word or choose a different category.</div>
 </section>
@@ -87,7 +113,7 @@ document.querySelectorAll('.guide').forEach(card=>{
 });
 function downloadText(filename,content){const blob=new Blob([content],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=filename;a.style.display='none';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)}
 document.querySelectorAll('.download').forEach(btn=>btn.addEventListener('click',()=>{const card=btn.closest('.guide');const name=(card.querySelector('h2')?.innerText||'learning-guide').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');downloadText('vitalnoval-'+name+'.txt',guideText(card))}));
-document.getElementById('downloadAll').addEventListener('click',()=>downloadText('vitalnoval-six-starter-learning-guides.txt',cards.map(guideText).join('\\n\\n'+'='.repeat(58)+'\\n\\n')));
+document.getElementById('downloadAll').addEventListener('click',()=>downloadText('vitalnoval-seven-starter-learning-guides.txt',cards.map(guideText).join('\\n\\n'+'='.repeat(58)+'\\n\\n')));
 search.addEventListener('input',filter);category.addEventListener('change',filter);
 document.querySelectorAll('.print').forEach(btn=>btn.addEventListener('click',()=>{const details=btn.closest('.guide').querySelector('details');const was=details.open;details.open=true;window.print();details.open=was}));
 document.getElementById('year').textContent=new Date().getFullYear();
