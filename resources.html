@@ -32,7 +32,7 @@ html[data-theme="dark"] .top a.back{color:#f3f8f4}
 <header><div class="wrap top"><a class="brand" href="index.html">VITALNOVAL<small>HEALTHY LIVING FOR EVERYONE</small></a><a class="back" href="index.html">← Back to main website</a><button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false"><span id="themeIcon" aria-hidden="true">☾</span><span id="themeLabel">Dark mode</span></button></div></header>
 <main class="wrap">
 <section class="hero"><div class="kicker">Learn · Practise · Grow</div><h1>The VitalNoval<br>Educational Resource Library</h1><p>Practical starting points for healthier everyday choices. Explore short learning guides for individuals, families, schools, workplaces and community groups. Choose a topic, open its guide, download a portable copy or print it. Printable HTML files can also be saved as PDFs from your browser.</p>
-<div class="tools"><input id="search" type="search" placeholder="Search guides or topics…" aria-label="Search learning guides"><select id="category" aria-label="Filter by category"><option value="all">All categories</option><option value="wellness">Everyday wellness</option><option value="fitness">Movement & fitness</option><option value="nutrition">Nutrition</option><option value="sports">Sports & recreation</option><option value="safety">Safety & first aid</option><option value="institutions">Group learning</option><option value="health">Personal & environmental health</option></select><button class="btn" id="downloadAll" type="button">Download all 7 guides ↓</button></div><div class="count" id="count" aria-live="polite">Showing 7 learning guides</div></section>
+<div class="tools"><input id="search" type="search" placeholder="Search guides or topics…" aria-label="Search learning guides"><select id="category" aria-label="Filter by category"><option value="all">All categories</option><option value="wellness">Everyday wellness</option><option value="fitness">Movement & fitness</option><option value="nutrition">Nutrition</option><option value="sports">Sports & recreation</option><option value="safety">Safety & first aid</option><option value="institutions">Group learning</option><option value="health">Personal & environmental health</option><option value="human-kinetics">Human Kinetics & Health Education</option></select><button class="btn" id="downloadAll" type="button">Download all 8 guides ↓</button></div><div class="count" id="count" aria-live="polite">Showing 8 learning guides</div></section>
 <section class="grid" id="guides" aria-label="Learning guides">
 <article class="guide" data-category="wellness" data-search="everyday wellness healthy habits sleep hydration routine wellbeing">
 <span class="tag">Everyday wellness</span><h2>1. A practical healthy-living starter</h2><p>Build a realistic foundation with small habits that can fit into ordinary days.</p>
@@ -84,6 +84,32 @@ html[data-theme="dark"] .top a.back{color:#f3f8f4}
 <div class="note"><b>Safety note:</b> This is general educational information, not diagnosis, treatment or environmental testing. Do not handle unknown chemicals, contaminated waste or unsafe water. Follow local public-health instructions and consult qualified professionals when needed.</div>
 </details>
 <div class="guide-actions"><button class="btn download">Download guide ↓</button><button class="btn secondary print">Print guide</button></div></article>
+<article class="guide" data-category="human-kinetics" data-search="human kinetics health education foundations physical education anatomy physiology biomechanics motor learning exercise physiology sports psychology sociology history philosophy curriculum teaching assessment careers">
+<span class="tag">Human Kinetics & Health Education</span><h2>8. Foundations of Human Kinetics and Health Education</h2><p>A beginner-friendly map of the discipline, its major branches, learning methods and practical career connections.</p>
+<details><summary>Open learning guide</summary>
+<h3>What does the field study?</h3><p>Human Kinetics is the study of human movement and physical activity. Health Education helps people and communities develop knowledge, skills and supportive conditions for healthier choices. The fields overlap in schools, sport, recreation, workplaces and community settings.</p>
+<h3>Major areas of study</h3><ul>
+<li><b>Exercise physiology:</b> how the body responds and adapts to physical activity and exercise.</li>
+<li><b>Functional anatomy and biomechanics:</b> body structures, movement patterns and the forces involved in human motion.</li>
+<li><b>Motor learning and control:</b> how movement skills are acquired, practised and coordinated.</li>
+<li><b>Sport and exercise psychology:</b> motivation, confidence, attention, teamwork and behaviour in physical activity.</li>
+<li><b>Sport sociology, history and philosophy:</b> how culture, society, values and history shape sport and physical activity.</li>
+<li><b>Physical education and pedagogy:</b> planning inclusive lessons, teaching movement skills and assessing learning.</li>
+<li><b>Health education:</b> personal, community and environmental health, prevention, health literacy and informed decision-making.</li>
+<li><b>Adapted physical activity and recreation:</b> making movement, play and sport accessible to people with varied abilities and needs.</li>
+</ul>
+<h3>How to study the subject effectively</h3><ul>
+<li>Build a glossary of important terms and explain each concept in your own words.</li>
+<li>Connect classroom theory to safe, supervised practical observations and activities.</li>
+<li>Use textbooks, peer-reviewed research, reputable public-health agencies and course materials; check publication dates and references.</li>
+<li>Practise planning a lesson or health-promotion activity with clear objectives, inclusive adaptations and a way to evaluate learning.</li>
+<li>Keep notes organised by topic and distinguish established evidence from personal opinion or emerging ideas.</li>
+</ul>
+<h3>Where can the knowledge be applied?</h3><p>Depending on qualifications, local requirements and further training, knowledge from this field can support work in physical education, coaching, sport and recreation, fitness, health promotion, community education, research and related areas. Some roles require professional registration, accreditation or additional certification.</p>
+<h3>Check your understanding</h3><ul><li>How would you explain the difference and connection between Human Kinetics and Health Education?</li><li>Which branch helps explain how the body adapts to exercise?</li><li>Why should a physical education lesson include inclusive adaptations and assessment?</li><li>What makes a learning source reliable and suitable for academic work?</li></ul>
+<div class="note"><b>Learning note:</b> This is an introductory overview, not an accredited syllabus or professional qualification. Course names and programme requirements vary between institutions; consult your department's curriculum and recommended reading list.</div>
+</details>
+<div class="guide-actions"><button class="btn download">Download guide ↓</button><button class="btn secondary print">Print guide</button></div></article>
 <div class="empty" id="empty">No guides match that search. Try another word or choose a different category.</div>
 </section>
 </main>
@@ -113,7 +139,7 @@ document.querySelectorAll('.guide').forEach(card=>{
 });
 function downloadText(filename,content){const blob=new Blob([content],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=filename;a.style.display='none';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)}
 document.querySelectorAll('.download').forEach(btn=>btn.addEventListener('click',()=>{const card=btn.closest('.guide');const name=(card.querySelector('h2')?.innerText||'learning-guide').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');downloadText('vitalnoval-'+name+'.txt',guideText(card))}));
-document.getElementById('downloadAll').addEventListener('click',()=>downloadText('vitalnoval-seven-starter-learning-guides.txt',cards.map(guideText).join('\\n\\n'+'='.repeat(58)+'\\n\\n')));
+document.getElementById('downloadAll').addEventListener('click',()=>downloadText('vitalnoval-eight-starter-learning-guides.txt',cards.map(guideText).join('\\n\\n'+'='.repeat(58)+'\\n\\n')));
 search.addEventListener('input',filter);category.addEventListener('change',filter);
 document.querySelectorAll('.print').forEach(btn=>btn.addEventListener('click',()=>{const details=btn.closest('.guide').querySelector('details');const was=details.open;details.open=true;window.print();details.open=was}));
 document.getElementById('year').textContent=new Date().getFullYear();
