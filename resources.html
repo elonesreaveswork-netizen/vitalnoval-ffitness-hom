@@ -32,7 +32,7 @@ html[data-theme="dark"] .top a.back{color:#f3f8f4}
 <header><div class="wrap top"><a class="brand" href="index.html">VITALNOVAL<small>HEALTHY LIVING FOR EVERYONE</small></a><a class="back" href="index.html">← Back to main website</a><button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false"><span id="themeIcon" aria-hidden="true">☾</span><span id="themeLabel">Dark mode</span></button></div></header>
 <main class="wrap">
 <section class="hero"><div class="kicker">Learn · Practise · Grow</div><h1>The VitalNoval<br>Educational Resource Library</h1><p>Practical starting points for healthier everyday choices. Explore short learning guides for individuals, families, schools, workplaces and community groups. Choose a topic, open its guide, download a portable copy or print it. Printable HTML files can also be saved as PDFs from your browser.</p>
-<div class="tools"><input id="search" type="search" placeholder="Search guides or topics…" aria-label="Search learning guides"><select id="category" aria-label="Filter by category"><option value="all">All categories</option><option value="wellness">Everyday wellness</option><option value="fitness">Movement & fitness</option><option value="nutrition">Nutrition</option><option value="sports">Sports & recreation</option><option value="safety">Safety & first aid</option><option value="institutions">Group learning</option><option value="health">Personal & environmental health</option><option value="human-kinetics">Human Kinetics & Health Education</option></select><button class="btn" id="downloadAll" type="button">Download all 8 guides ↓</button></div><div class="count" id="count" aria-live="polite">Showing 8 learning guides</div></section>
+<div class="tools"><input id="search" type="search" placeholder="Search guides or topics…" aria-label="Search learning guides"><select id="category" aria-label="Filter by category"><option value="all">All categories</option><option value="wellness">Everyday wellness</option><option value="fitness">Movement & fitness</option><option value="nutrition">Nutrition</option><option value="sports">Sports & recreation</option><option value="safety">Safety & first aid</option><option value="institutions">Group learning</option><option value="health">Personal & environmental health</option><option value="human-kinetics">Human Kinetics & Health Education</option></select><button class="btn" id="downloadAll" type="button">Download all 9 guides ↓</button></div><div class="count" id="count" aria-live="polite">Showing 9 learning guides</div></section>
 <section class="grid" id="guides" aria-label="Learning guides">
 <article class="guide" data-category="wellness" data-search="everyday wellness healthy habits sleep hydration routine wellbeing">
 <span class="tag">Everyday wellness</span><h2>1. A practical healthy-living starter</h2><p>Build a realistic foundation with small habits that can fit into ordinary days.</p>
@@ -110,6 +110,36 @@ html[data-theme="dark"] .top a.back{color:#f3f8f4}
 <div class="note"><b>Learning note:</b> This is an introductory overview, not an accredited syllabus or professional qualification. Course names and programme requirements vary between institutions; consult your department's curriculum and recommended reading list.</div>
 </details>
 <div class="guide-actions"><button class="btn download">Download guide ↓</button><button class="btn secondary print">Print guide</button></div></article>
+<article class="guide" data-category="human-kinetics" data-search="functional anatomy physiology human movement muscles bones joints nervous system cardiovascular respiratory systems planes axes movement posture locomotor skills">
+<span class="tag">Human Kinetics · Anatomy & Physiology</span><h2>9. Understanding the Human Body in Movement</h2><p>An introductory guide to the body systems and movement concepts that help explain physical activity.</p>
+<details><summary>Open learning guide</summary>
+<h3>Why study the body in movement?</h3><p>Human movement depends on several body systems working together. Studying their basic roles helps learners understand physical education, exercise, sport, movement skills and safe activity planning.</p>
+<h3>Key structures and systems</h3><ul>
+<li><b>Skeletal system:</b> bones provide support and protection, while joints allow movement between body segments.</li>
+<li><b>Muscular system:</b> skeletal muscles produce force to move or stabilise body parts. Muscles often work in coordinated groups.</li>
+<li><b>Nervous system:</b> the brain, spinal cord and nerves help receive information, coordinate action and regulate movement.</li>
+<li><b>Cardiovascular system:</b> the heart and blood vessels circulate blood, delivering oxygen and nutrients and transporting waste products.</li>
+<li><b>Respiratory system:</b> the lungs and airways enable gas exchange, supplying oxygen and removing carbon dioxide.</li>
+</ul>
+<h3>Basic movement vocabulary</h3><ul>
+<li><b>Flexion and extension:</b> movements that generally decrease or increase the angle at a joint.</li>
+<li><b>Abduction and adduction:</b> movement away from or toward the body's midline.</li>
+<li><b>Rotation:</b> turning around an axis; circumduction combines several movement directions in a circular pattern.</li>
+<li><b>Balance and stability:</b> control of body position, whether still or moving.</li>
+<li><b>Locomotor skills:</b> movements that transport the body, such as walking, running, hopping and jumping.</li>
+<li><b>Object-control skills:</b> actions such as throwing, catching, kicking and striking.</li>
+</ul>
+<h3>Planes of movement</h3><ul><li><b>Sagittal plane:</b> commonly describes forward-and-backward movements.</li><li><b>Frontal plane:</b> commonly describes side-to-side movements.</li><li><b>Transverse plane:</b> commonly describes rotational movements.</li></ul>
+<h3>Learning activities</h3><ul>
+<li>Identify a joint involved in a simple action such as bending the elbow or knee.</li>
+<li>Observe how muscles coordinate during a controlled sit-to-stand movement.</li>
+<li>Classify a walking step, side-step and gentle trunk turn by their main movement plane.</li>
+<li>Explain why breathing and circulation become more active during physical exertion.</li>
+</ul>
+<h3>Review questions</h3><ul><li>What roles do the skeletal and muscular systems play in movement?</li><li>How do the nervous and cardiovascular systems support physical activity?</li><li>What is the difference between locomotor and object-control skills?</li><li>Which plane is most associated with rotational movement?</li></ul>
+<div class="note"><b>Safety note:</b> This is a basic educational overview, not a guide to diagnosing injuries or prescribing exercise. Use safe, comfortable demonstrations, avoid forcing joints into painful ranges and seek qualified advice for individual concerns.</div>
+</details>
+<div class="guide-actions"><button class="btn download">Download guide ↓</button><button class="btn secondary print">Print guide</button></div></article>
 <div class="empty" id="empty">No guides match that search. Try another word or choose a different category.</div>
 </section>
 </main>
@@ -139,7 +169,7 @@ document.querySelectorAll('.guide').forEach(card=>{
 });
 function downloadText(filename,content){const blob=new Blob([content],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=filename;a.style.display='none';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)}
 document.querySelectorAll('.download').forEach(btn=>btn.addEventListener('click',()=>{const card=btn.closest('.guide');const name=(card.querySelector('h2')?.innerText||'learning-guide').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');downloadText('vitalnoval-'+name+'.txt',guideText(card))}));
-document.getElementById('downloadAll').addEventListener('click',()=>downloadText('vitalnoval-eight-starter-learning-guides.txt',cards.map(guideText).join('\\n\\n'+'='.repeat(58)+'\\n\\n')));
+document.getElementById('downloadAll').addEventListener('click',()=>downloadText('vitalnoval-nine-starter-learning-guides.txt',cards.map(guideText).join('\\n\\n'+'='.repeat(58)+'\\n\\n')));
 search.addEventListener('input',filter);category.addEventListener('change',filter);
 document.querySelectorAll('.print').forEach(btn=>btn.addEventListener('click',()=>{const details=btn.closest('.guide').querySelector('details');const was=details.open;details.open=true;window.print();details.open=was}));
 document.getElementById('year').textContent=new Date().getFullYear();
