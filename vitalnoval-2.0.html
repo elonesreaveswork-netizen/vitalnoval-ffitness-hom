@@ -100,5 +100,6 @@ document.querySelectorAll('.question').forEach(question=>{question.querySelector
 document.getElementById('scoreBtn').addEventListener('click',()=>{let score=0;const qs=[...document.querySelectorAll('.question')];qs.forEach(q=>{const correct=q.dataset.selected===q.dataset.answer;if(correct)score++;q.querySelector('.feedback').textContent=q.dataset.selected?(correct?'Correct — well done.':'Not quite. Review the topic and try again.'):'Choose an answer to complete this question.';});document.getElementById('quizResult').textContent='Score: '+score+' / '+qs.length;});
 document.getElementById('resetBtn').addEventListener('click',()=>{document.querySelectorAll('.question').forEach(q=>{delete q.dataset.selected;q.querySelector('.feedback').textContent='';q.querySelectorAll('button').forEach(b=>{b.style.background='';b.setAttribute('aria-pressed','false');});});document.getElementById('quizResult').textContent='';});
 </script>
+<script src="assets/smart-access.js" defer></script>
 </body>
 </html>
